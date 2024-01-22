@@ -1,11 +1,9 @@
-function Search-FilesWithPattern {
-    param(
-        [Parameter(Mandatory = $true)]
-        [string]$Path,
-        
-        [Parameter(Mandatory = $true)]
-        [string]$Pattern
-    )
+param(
+    [Parameter(Mandatory = $true)]
+    [string]$Path,
 
-    Get-ChildItem -Path $Path -Recurse | Select-String -Pattern $Pattern
-}
+    [Parameter(Mandatory = $true)]
+    [string]$Pattern
+)
+
+Get-ChildItem -Path $Path -Recurse | Select-String -Pattern $Pattern
